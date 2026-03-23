@@ -7,22 +7,19 @@ function calculateRentalCost(days) {
   const basePrice = 40;
   const weekOrMoreDiscount = 50;
   const moreThanThreeDays = 20;
-  const longTerm = 6;
-  const midlTerm = 3;
-  const shortTerm = 2;
+  const longTerm = 7;
+  const midTerm = 3;
   const PriceForDays = basePrice * days;
 
-  if (days > longTerm) {
+  if (days >= longTerm) {
     return PriceForDays - weekOrMoreDiscount;
   }
 
-  if (days >= midlTerm) {
+  if (days >= midTerm) {
     return PriceForDays - moreThanThreeDays;
   }
 
-  if (days <= shortTerm) {
-    return PriceForDays;
-  }
+  return PriceForDays;
 }
 
 module.exports = calculateRentalCost;
